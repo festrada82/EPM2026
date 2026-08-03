@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fuentes y referencias del proyecto de investigación">
+  <title>Fuentes del proyecto de investigación</title>
+
+  <style>
+    :root {
+      --fondo: #f5f7fb;
+      --tarjeta: #ffffff;
+      --texto: #172033;
+      --secundario: #667085;
+      --borde: #e4e7ec;
+      --acento: #2457d6;
+      --acento-suave: #edf3ff;
+      --sombra: 0 8px 24px rgba(16, 24, 40, 0.07);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      line-height: 1.55;
+    }
+
+    header {
+      background: linear-gradient(135deg, #163c9f, #3477ef);
+      color: white;
+      padding: 54px 20px 44px;
+    }
+
+    .contenedor {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      line-height: 1.1;
+    }
+
+    .subtitulo {
+      margin: 0;
+      max-width: 720px;
+      opacity: 0.9;
+      font-size: 1.05rem;
+    }
+
+    main {
+      padding: 28px 0 50px;
+    }
+
+    .panel {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    input, select {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      padding: 0 14px;
+      background: white;
+      color: var(--texto);
+      font: inherit;
+      outline: none;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--acento);
+      box-shadow: 0 0 0 3px rgba(36, 87, 214, 0.12);
+    }
+
+    .contador {
+      color: var(--secundario);
+      margin: 0 0 14px;
+      font-size: 0.93rem;
+    }
+
+    .lista {
+      display: grid;
+      gap: 16px;
+    }
+
+    .fuente {
+      background: var(--tarjeta);
+      border: 1px solid var(--borde);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: var(--sombra);
+    }
+
+    .etiqueta {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--acento-suave);
+      color: var(--acento);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .fuente h2 {
+      margin: 0 0 8px;
+      font-size: 1.12rem;
+      line-height: 1.35;
+    }
+
+    .autores, .detalle, .nota {
+      margin: 5px 0;
+      color: var(--secundario);
+    }
+
+    .nota {
+      color: var(--texto);
+      margin-top: 12px;
+    }
+
+    .acciones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 15px;
+    }
+
+    .boton {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 7px 12px;
+      border: 1px solid var(--acento);
+      border-radius: 9px;
+      color: var(--acento);
+      text-decoration: none;
+      font-weight: 650;
+      font-size: 0.9rem;
+    }
+
+    .boton:hover {
+      background: var(--acento-suave);
+    }
+
+    .boton.principal {
+      background: var(--acento);
+      color: white;
+    }
+
+    .vacio {
+      display: none;
+      padding: 30px;
+      text-align: center;
+      color: var(--secundario);
+      background: white;
+      border: 1px dashed var(--borde);
+      border-radius: 14px;
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--borde);
+      color: var(--secundario);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 650px) {
+      header { padding-top: 40px; }
+      .panel { grid-template-columns: 1fr; }
+      .fuente { padding: 17px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="contenedor">
+      <!-- CAMBIA AQUÍ EL TÍTULO Y LA DESCRIPCIÓN -->
+      <h1>Fuentes del proyecto de investigación</h1>
+      <p class="subtitulo">
+        Repositorio público de artículos, libros, normas, bases de datos y documentos
+        utilizados como sustento del proyecto.
+      </p>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <div class="panel">
+      <input
+        id="buscador"
+        type="search"
+        placeholder="Buscar por título, autor, año o palabra clave…"
+        aria-label="Buscar fuentes"
+      >
+
+      <select id="filtro" aria-label="Filtrar por tipo de fuente">
+        <option value="todas">Todas las fuentes</option>
+        <option value="articulo">Artículos</option>
+        <option value="libro">Libros</option>
+        <option value="norma">Normas</option>
+        <option value="informe">Informes</option>
+        <option value="sitio">Sitios web</option>
+      </select>
+    </div>
+
+    <p class="contador"><span id="numeroFuentes">0</span> fuentes mostradas</p>
+
+    <section class="lista" id="listaFuentes">
+
+      <!-- FUENTE 1: COPIA ESTE BLOQUE PARA AGREGAR MÁS -->
+      <article class="fuente" data-tipo="articulo">
+        <span class="etiqueta">Artículo científico</span>
+        <h2>Título del artículo científico</h2>
+        <p class="autores">Apellido, N.; Apellido, N. (2025)</p>
+        <p class="detalle">Nombre de la revista, volumen(número), páginas.</p>
+        <p class="nota">
+          Breve explicación de cómo se utilizó esta fuente dentro del proyecto.
+        </p>
+        <div class="acciones">
+          <a class="boton principal"
+             href="https://doi.org/10.0000/ejemplo"
+             target="_blank"
+             rel="noopener noreferrer">Abrir DOI</a>
+          <a class="boton"
+             href="https://ejemplo.com"
+             target="_blank"
+             rel="noopener noreferrer">Ver documento</a>
+        </div>
+      </article>
+
+      <!-- FUENTE 2 -->
+      <article class="fuente" data-tipo="libro">
+        <span class="etiqueta">Libro</span>
+        <h2>Título del libro</h2>
+        <p class="autores">Apellido, N. (2023)</p>
+        <p class="detalle">Editorial. ISBN 000-0-00-000000-0.</p>
+        <p class="nota">
+          Marco teórico, método o concepto tomado de esta obra.
+        </p>
+        <div class="acciones">
+          <a class="boton principal"
+             href="https://books.google.com/"
+             target="_blank"
+             rel="noopener noreferrer">Consultar libro</a>
+        </div>
+      </article>
+
+      <!-- FUENTE 3 -->
+      <article class="fuente" data-tipo="norma">
+        <span class="etiqueta">Norma técnica</span>
+        <h2>Nombre y clave de la norma</h2>
+        <p class="autores">Organización responsable (2024)</p>
+        <p class="detalle">Edición o versión aplicable.</p>
+        <p class="nota">
+          Requisitos de diseño, seguridad, calidad o medición considerados.
+        </p>
+        <div class="acciones">
+          <a class="boton principal"
+             href="https://www.iso.org/"
+             target="_blank"
+             rel="noopener noreferrer">Consultar norma</a>
+        </div>
+      </article>
+
+    </section>
+
+    <div class="vacio" id="mensajeVacio">
+      No se encontraron fuentes con esos criterios.
+    </div>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      Última actualización: <span id="fechaActualizacion"></span>
+    </div>
+  </footer>
+
+  <script>
+    const buscador = document.getElementById("buscador");
+    const filtro = document.getElementById("filtro");
+    const fuentes = [...document.querySelectorAll(".fuente")];
+    const numeroFuentes = document.getElementById("numeroFuentes");
+    const mensajeVacio = document.getElementById("mensajeVacio");
+
+    function normalizar(texto) {
+      return texto
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function filtrarFuentes() {
+      const consulta = normalizar(buscador.value.trim());
+      const tipo = filtro.value;
+      let visibles = 0;
+
+      fuentes.forEach((fuente) => {
+        const contenido = normalizar(fuente.innerText);
+        const coincideTexto = contenido.includes(consulta);
+        const coincideTipo =
+          tipo === "todas" || fuente.dataset.tipo === tipo;
+
+        const mostrar = coincideTexto && coincideTipo;
+        fuente.style.display = mostrar ? "" : "none";
+
+        if (mostrar) visibles++;
+      });
+
+      numeroFuentes.textContent = visibles;
+      mensajeVacio.style.display = visibles === 0 ? "block" : "none";
+    }
+
+    buscador.addEventListener("input", filtrarFuentes);
+    filtro.addEventListener("change", filtrarFuentes);
+
+    numeroFuentes.textContent = fuentes.length;
+
+    const fecha = new Intl.DateTimeFormat("es-MX", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    }).format(new Date());
+
+    document.getElementById("fechaActualizacion").textContent = fecha;
+  </script>
+</body>
+</html>
