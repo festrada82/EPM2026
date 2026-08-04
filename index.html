@@ -200,22 +200,21 @@
     </div>
   </header>
 
-  <main class="contenedor">
+<main class="contenedor">
     <div class="panel">
       <input
         id="buscador"
         type="search"
-        placeholder="Buscar por título, autor, año o palabra clave…"
+        placeholder="Buscar por título, autor, revista, año o palabra clave…"
         aria-label="Buscar fuentes"
       >
 
       <select id="filtro" aria-label="Filtrar por tipo de fuente">
         <option value="todas">Todas las fuentes</option>
-        <option value="articulo">Artículos</option>
-        <option value="libro">Libros</option>
-        <option value="norma">Normas</option>
-        <option value="informe">Informes</option>
-        <option value="sitio">Sitios web</option>
+        <option value="articulo-revista">Artículos de revista</option>
+        <option value="articulo-congreso">Actas de congreso</option>
+        <option value="publicacion-institucional">Publicaciones institucionales</option>
+        <option value="norma-oficial">Normas oficiales</option>
       </select>
     </div>
 
@@ -223,58 +222,122 @@
 
     <section class="lista" id="listaFuentes">
 
-      <!-- FUENTE 1: COPIA ESTE BLOQUE PARA AGREGAR MÁS -->
-      <article class="fuente" data-tipo="articulo">
-        <span class="etiqueta">Artículo científico</span>
-        <h2>Título del artículo científico</h2>
-        <p class="autores">Apellido, N.; Apellido, N. (2025)</p>
-        <p class="detalle">Nombre de la revista, volumen(número), páginas.</p>
-        <p class="nota">
-          Breve explicación de cómo se utilizó esta fuente dentro del proyecto.
-        </p>
+      <!-- 1. ARTÍCULO DE REVISTA CIENTÍFICA -->
+      <article class="fuente" data-tipo="articulo-revista">
+        <div class="encabezado-fuente">
+          <span class="etiqueta">Artículo de revista científica</span>
+          <span class="etiqueta secundaria">Investigación comparativa</span>
+        </div>
+        <h2>Digital traceability in agri-food supply chains: A comparative analysis of OECD member countries</h2>
+        <p class="autores">Charlebois, S.; Latif, N.; Ilahi, I.; Sarker, B.; Music, J.; &amp; Vezeau, J. (2024)</p>
+        <p class="detalle"><strong>Revista:</strong> <em>Foods</em>, 13(7), artículo 1075.</p>
+        <p class="nota">Fuente sobre trazabilidad digital y comparación de su implementación en cadenas agroalimentarias de países miembros de la OCDE.</p>
+        <p class="referencia">Charlebois, S., Latif, N., Ilahi, I., Sarker, B., Music, J., &amp; Vezeau, J. (2024). Digital traceability in agri-food supply chains: A comparative analysis of OECD member countries. <em>Foods, 13</em>(7), 1075. https://doi.org/10.3390/foods13071075</p>
         <div class="acciones">
-          <a class="boton principal"
-             href="https://doi.org/10.0000/ejemplo"
-             target="_blank"
-             rel="noopener noreferrer">Abrir DOI</a>
-          <a class="boton"
-             href="https://ejemplo.com"
-             target="_blank"
-             rel="noopener noreferrer">Ver documento</a>
+          <a class="boton principal" href="https://doi.org/10.3390/foods13071075" target="_blank" rel="noopener noreferrer">Abrir DOI</a>
+          <button class="boton copiar" type="button">Copiar referencia</button>
         </div>
       </article>
 
-      <!-- FUENTE 2 -->
-      <article class="fuente" data-tipo="libro">
-        <span class="etiqueta">Libro</span>
-        <h2>Título del libro</h2>
-        <p class="autores">Apellido, N. (2023)</p>
-        <p class="detalle">Editorial. ISBN 000-0-00-000000-0.</p>
-        <p class="nota">
-          Marco teórico, método o concepto tomado de esta obra.
-        </p>
+      <!-- 2. REVISIÓN SISTEMÁTICA EN REVISTA CIENTÍFICA -->
+      <article class="fuente" data-tipo="articulo-revista">
+        <div class="encabezado-fuente">
+          <span class="etiqueta">Artículo de revista científica</span>
+          <span class="etiqueta secundaria">Revisión sistemática</span>
+        </div>
+        <h2>Systematic literature review of barriers and enablers to implementing food informatics technologies: Unlocking agri-food chain innovation</h2>
+        <p class="autores">Orjuela-Garzon, W. A.; Sandoval-Aldana, A.; &amp; Mendez-Arteaga, J. J. (2024)</p>
+        <p class="detalle"><strong>Revista:</strong> <em>Foods</em>, 13(21), artículo 3349.</p>
+        <p class="nota">Revisión de las barreras y los facilitadores para implementar tecnologías de informática alimentaria e impulsar la innovación agroalimentaria.</p>
+        <p class="referencia">Orjuela-Garzon, W. A., Sandoval-Aldana, A., &amp; Mendez-Arteaga, J. J. (2024). Systematic literature review of barriers and enablers to implementing food informatics technologies: Unlocking agri-food chain innovation. <em>Foods, 13</em>(21), 3349. https://doi.org/10.3390/foods13213349</p>
         <div class="acciones">
-          <a class="boton principal"
-             href="https://books.google.com/"
-             target="_blank"
-             rel="noopener noreferrer">Consultar libro</a>
+          <a class="boton principal" href="https://doi.org/10.3390/foods13213349" target="_blank" rel="noopener noreferrer">Abrir DOI</a>
+          <button class="boton copiar" type="button">Copiar referencia</button>
         </div>
       </article>
 
-      <!-- FUENTE 3 -->
-      <article class="fuente" data-tipo="norma">
-        <span class="etiqueta">Norma técnica</span>
-        <h2>Nombre y clave de la norma</h2>
-        <p class="autores">Organización responsable (2024)</p>
-        <p class="detalle">Edición o versión aplicable.</p>
-        <p class="nota">
-          Requisitos de diseño, seguridad, calidad o medición considerados.
-        </p>
+      <!-- 3. ARTÍCULO DE REVISTA CIENTÍFICA -->
+      <article class="fuente" data-tipo="articulo-revista">
+        <div class="encabezado-fuente">
+          <span class="etiqueta">Artículo de revista científica</span>
+          <span class="etiqueta secundaria">Modelo de optimización</span>
+        </div>
+        <h2>Environmentally sustainable inventory control for perishable products: A bi-objective reorder-level policy</h2>
+        <p class="autores">Pilati, F.; Giacomelli, M.; &amp; Brunelli, M. (2024)</p>
+        <p class="detalle"><strong>Revista:</strong> <em>International Journal of Production Economics</em>, 274, artículo 109309.</p>
+        <p class="nota">Propone una política de inventario con dos objetivos para productos perecederos, considerando desempeño operativo y sostenibilidad ambiental.</p>
+        <p class="referencia">Pilati, F., Giacomelli, M., &amp; Brunelli, M. (2024). Environmentally sustainable inventory control for perishable products: A bi-objective reorder-level policy. <em>International Journal of Production Economics, 274</em>, 109309. https://doi.org/10.1016/j.ijpe.2024.109309</p>
         <div class="acciones">
-          <a class="boton principal"
-             href="https://www.iso.org/"
-             target="_blank"
-             rel="noopener noreferrer">Consultar norma</a>
+          <a class="boton principal" href="https://doi.org/10.1016/j.ijpe.2024.109309" target="_blank" rel="noopener noreferrer">Abrir DOI</a>
+          <button class="boton copiar" type="button">Copiar referencia</button>
+        </div>
+      </article>
+
+      <!-- 4. ARTÍCULO EN ACTAS DE CONGRESO -->
+      <article class="fuente" data-tipo="articulo-congreso">
+        <div class="encabezado-fuente">
+          <span class="etiqueta">Artículo en actas de congreso</span>
+          <span class="etiqueta secundaria">Evaluación de ciclo de vida</span>
+        </div>
+        <h2>Towards a cleaner Mexican tortilla industry: A prospective life cycle assessment approach</h2>
+        <p class="autores">Quintero-Herrera, S.; Rueda Avellaneda, J. F.; Zwolinski, P.; Evrard, D.; &amp; Rivas-García, P. (2023)</p>
+        <p class="detalle"><strong>Publicación:</strong> <em>Procedia CIRP</em>, 116, 504–509.</p>
+        <p class="nota">Analiza escenarios para una industria mexicana de la tortilla más limpia mediante una evaluación prospectiva del ciclo de vida.</p>
+        <p class="referencia">Quintero-Herrera, S., Rueda Avellaneda, J. F., Zwolinski, P., Evrard, D., &amp; Rivas-García, P. (2023). Towards a cleaner Mexican tortilla industry: A prospective life cycle assessment approach. <em>Procedia CIRP, 116</em>, 504–509. https://doi.org/10.1016/j.procir.2023.02.085</p>
+        <div class="acciones">
+          <a class="boton principal" href="https://doi.org/10.1016/j.procir.2023.02.085" target="_blank" rel="noopener noreferrer">Abrir DOI</a>
+          <button class="boton copiar" type="button">Copiar referencia</button>
+        </div>
+      </article>
+
+      <!-- 5. REVISIÓN SISTEMÁTICA EN REVISTA CIENTÍFICA -->
+      <article class="fuente" data-tipo="articulo-revista">
+        <div class="encabezado-fuente">
+          <span class="etiqueta">Artículo de revista científica</span>
+          <span class="etiqueta secundaria">Revisión sistemática</span>
+        </div>
+        <h2>Toward SMEs digital transformation success: A systematic literature review</h2>
+        <p class="autores">Sagala, G. H.; &amp; Őri, D. (2024)</p>
+        <p class="detalle"><strong>Revista:</strong> <em>Information Systems and e-Business Management</em>, 22(4), 667–719.</p>
+        <p class="nota">Sintetiza los factores asociados con el éxito de la transformación digital en pequeñas y medianas empresas.</p>
+        <p class="referencia">Sagala, G. H., &amp; Őri, D. (2024). Toward SMEs digital transformation success: A systematic literature review. <em>Information Systems and e-Business Management, 22</em>(4), 667–719. https://doi.org/10.1007/s10257-024-00682-2</p>
+        <div class="acciones">
+          <a class="boton principal" href="https://doi.org/10.1007/s10257-024-00682-2" target="_blank" rel="noopener noreferrer">Abrir DOI</a>
+          <button class="boton copiar" type="button">Copiar referencia</button>
+        </div>
+      </article>
+
+      <!-- 6. PUBLICACIÓN INSTITUCIONAL GUBERNAMENTAL -->
+      <article class="fuente" data-tipo="publicacion-institucional">
+        <div class="encabezado-fuente">
+          <span class="etiqueta">Publicación institucional</span>
+          <span class="etiqueta secundaria">Artículo de divulgación gubernamental</span>
+        </div>
+        <h2>Del maíz a la tortilla y el proceso de nixtamalización</h2>
+        <p class="autores">Secretaría de Agricultura y Desarrollo Rural (13 de junio de 2025)</p>
+        <p class="detalle"><strong>Sitio:</strong> Gobierno de México.</p>
+        <p class="nota">Describe el proceso de transformación del maíz en tortilla y la función de la nixtamalización en el contexto alimentario mexicano.</p>
+        <p class="referencia">Secretaría de Agricultura y Desarrollo Rural. (2025, 13 de junio). <em>Del maíz a la tortilla y el proceso de nixtamalización</em>. Gobierno de México. https://www.gob.mx/agricultura/es/articulos/del-maiz-a-la-tortilla-y-el-proceso-de-nixtamalizacion</p>
+        <div class="acciones">
+          <a class="boton principal" href="https://www.gob.mx/agricultura/es/articulos/del-maiz-a-la-tortilla-y-el-proceso-de-nixtamalizacion" target="_blank" rel="noopener noreferrer">Abrir publicación</a>
+          <button class="boton copiar" type="button">Copiar referencia</button>
+        </div>
+      </article>
+
+      <!-- 7. NORMA OFICIAL MEXICANA -->
+      <article class="fuente" data-tipo="norma-oficial">
+        <div class="encabezado-fuente">
+          <span class="etiqueta">Norma Oficial Mexicana</span>
+          <span class="etiqueta secundaria">Documento normativo oficial</span>
+        </div>
+        <h2>NOM-019-ENER-2009: Eficiencia térmica y eléctrica de máquinas tortilladoras mecanizadas</h2>
+        <p class="autores">Secretaría de Energía (2 de julio de 2009)</p>
+        <p class="detalle"><strong>Publicación oficial:</strong> Diario Oficial de la Federación.</p>
+        <p class="nota">Establece límites de eficiencia térmica y eléctrica, el método de prueba y los requisitos de marcado para máquinas tortilladoras mecanizadas.</p>
+        <p class="referencia">Secretaría de Energía. (2009, 2 de julio). <em>Norma Oficial Mexicana NOM-019-ENER-2009, eficiencia térmica y eléctrica de máquinas tortilladoras mecanizadas: Límites, método de prueba y marcado</em>. Diario Oficial de la Federación. https://www.dof.gob.mx/nota_detalle_popup.php?codigo=5097152</p>
+        <div class="acciones">
+          <a class="boton principal" href="https://www.dof.gob.mx/nota_detalle_popup.php?codigo=5097152" target="_blank" rel="noopener noreferrer">Consultar en el DOF</a>
+          <button class="boton copiar" type="button">Copiar referencia</button>
         </div>
       </article>
 
@@ -287,7 +350,7 @@
 
   <footer>
     <div class="contenedor">
-      Última actualización: <span id="fechaActualizacion"></span>
+      Total: 7 referencias · Última actualización: <span id="fechaActualizacion"></span>
     </div>
   </footer>
 
@@ -313,12 +376,10 @@
       fuentes.forEach((fuente) => {
         const contenido = normalizar(fuente.innerText);
         const coincideTexto = contenido.includes(consulta);
-        const coincideTipo =
-          tipo === "todas" || fuente.dataset.tipo === tipo;
-
+        const coincideTipo = tipo === "todas" || fuente.dataset.tipo === tipo;
         const mostrar = coincideTexto && coincideTipo;
-        fuente.style.display = mostrar ? "" : "none";
 
+        fuente.style.display = mostrar ? "" : "none";
         if (mostrar) visibles++;
       });
 
@@ -328,8 +389,25 @@
 
     buscador.addEventListener("input", filtrarFuentes);
     filtro.addEventListener("change", filtrarFuentes);
-
     numeroFuentes.textContent = fuentes.length;
+
+    document.querySelectorAll(".copiar").forEach((boton) => {
+      boton.addEventListener("click", async () => {
+        const referencia = boton.closest(".fuente").querySelector(".referencia").innerText;
+        const textoOriginal = boton.textContent;
+
+        try {
+          await navigator.clipboard.writeText(referencia);
+          boton.textContent = "Referencia copiada";
+        } catch (error) {
+          boton.textContent = "No se pudo copiar";
+        }
+
+        setTimeout(() => {
+          boton.textContent = textoOriginal;
+        }, 1800);
+      });
+    });
 
     const fecha = new Intl.DateTimeFormat("es-MX", {
       year: "numeric",
